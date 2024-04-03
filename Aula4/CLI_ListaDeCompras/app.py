@@ -1,14 +1,21 @@
 import click
+import os
 
 arrayOfItems = []
 
-@click.command()
-@click.argument()
-def mainMenu(option):
+#-------------------------------------------------------------------
+
+
+def showOptions():
     print("")
     print("[1] Add Item    [2] Remove Item    [3] Export List")
     print("")
 
+
+@click.command()
+@click.argument("option")
+def mainMenu(option):
+    showOptions()
     while True:
         option = input("Choose an option: ").strip()
         
@@ -62,3 +69,5 @@ def exportList(list, filename):
 
 if __name__ == "__main__":
     mainMenu()
+
+
